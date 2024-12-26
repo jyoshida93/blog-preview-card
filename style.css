@@ -1,0 +1,149 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+    z-index: 1;
+}
+
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+:root {
+    --yellow: hsl(47, 88%, 63%);
+    --white: hsl(0, 0%, 100%);
+    --gray-500: hsl(0, 0%, 42%);
+    --gray-950: hsl(0, 0%, 7%);
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+}
+
+.page {
+    background-color: var(--yellow);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    background-color: var(--white);
+    margin: 1.5rem;
+    padding: 1.5rem;
+    max-width: 24rem;
+    border: 1px var(--gray-950) solid;
+    border-radius: 20px;
+    box-shadow: 0.5rem 0.5rem 0 rgba(0, 0, 0, 100%);
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.75em;
+}
+
+.post-type {
+    background-color: var(--yellow);
+    padding: .25em 0.75em;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.875em;
+}
+
+.post-header {}
+
+.post-description {
+    color: var(--gray-500);
+}
+
+.post-published-date {
+    font-size: 0.875em;
+}
+
+.image-avatar {
+    width: 2em;
+    height: 2em;
+}
+
+.post-author {
+    display: flex;
+    gap: 0.75em;
+    align-items: center;
+}
+
+.post-author-name {
+    font-weight: 800;
+    font-size: 0.875em;
+}
+
+Avoid line wrap for header @media (max-width: 400px) {
+    .post-header {
+        font-size: 1.25em;
+    }
+}
