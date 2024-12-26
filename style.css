@@ -118,6 +118,11 @@ body {
 
 .post-header {}
 
+.post-header:hover {
+    color: var(--yellow);
+    cursor: pointer;
+}
+
 .post-description {
     color: var(--gray-500);
 }
@@ -142,7 +147,8 @@ body {
     font-size: 0.875em;
 }
 
-Avoid line wrap for header @media (max-width: 400px) {
+/* Avoid line wrap for header */
+@media (max-width: 400px) {
     .post-header {
         font-size: 1.25em;
     }
